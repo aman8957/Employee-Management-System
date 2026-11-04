@@ -1,0 +1,141 @@
+.employee-details-page {
+    color: #e8edf5;
+    padding-bottom: 25px;
+}
+
+.employee-back-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: #17212d;
+    border: 1px solid #293444;
+    color: #a6b4c6;
+    padding: 10px 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-bottom: 25px;
+}
+
+.employee-back-btn:hover {
+    color: #45e1cf;
+    border-color: #45e1cf;
+}
+
+.employee-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 25px;
+    background: #121b27;
+    border: 1px solid #253141;
+    border-radius: 13px;
+    margin-bottom: 20px;
+}
+
+.employee-profile-avatar {
+    width: 75px;
+    height: 75px;
+    display: grid;
+    place-items: center;
+    background: #23374c;
+    color: #45e1cf;
+    border-radius: 15px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.employee-profile-info h1 {
+    font: 600 26px 'Space Grotesk';
+    margin: 0 0 7px;
+}
+
+.employee-profile-info p {
+    color: #8291a5;
+    font-size: 13px;
+    margin: 0 0 12px;
+}
+
+.employee-profile-status {
+    display: inline-flex;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    background: #18352e;
+    color: #69dca9;
+}
+
+.employee-profile-status.inactive {
+    background: #2b303a;
+    color: #a4afbf;
+}
+
+.employee-profile-status.on-leave {
+    background: #3a2b22;
+    color: #f3b66d;
+}
+
+.employee-profile-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.employee-profile-card {
+    background: #121b27;
+    border: 1px solid #253141;
+    border-radius: 13px;
+    padding: 22px;
+}
+
+.profile-card-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #45e1cf;
+    margin-bottom: 22px;
+}
+
+.profile-card-heading h3 {
+    color: #e8edf5;
+    font-size: 15px;
+    margin: 0;
+}
+
+.profile-detail {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 15px 0;
+    border-bottom: 1px solid #202b39;
+}
+
+.profile-detail:last-child {
+    border-bottom: none;
+}
+
+.profile-detail span {
+    color: #8291a5;
+    font-size: 11px;
+}
+
+.profile-detail strong {
+    color: #dce5ef;
+    font-size: 13px;
+    font-weight: 500;
+    word-break: break-word;
+}
+
+@media (max-width: 700px) {
+    .employee-profile-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .employee-profile-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .employee-profile-info h1 {
+        font-size: 22px;
+    }
+}
