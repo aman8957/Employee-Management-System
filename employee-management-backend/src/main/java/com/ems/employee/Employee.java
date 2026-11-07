@@ -27,6 +27,9 @@ public class Employee {
     private String designation;
     private String status;
 
+    // Employee Profile Photo
+    private String profilePhoto;
+
     public Employee() {
     }
 
@@ -80,5 +83,14 @@ public class Employee {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    // Profile Photo Getter & Setter
+    public String getProfilePhoto() {
+        return profilePhoto;
+    }
+
+    public void setProfilePhoto(String profilePhoto) {
+        this.profilePhoto = profilePhoto;
     }
 }

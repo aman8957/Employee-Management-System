@@ -1,65 +1,168 @@
+/* =========================================
+   EMPLOYEE DETAILS PAGE
+========================================= */
+
 .employee-details-page {
     color: #e8edf5;
     padding-bottom: 25px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
+/* =========================================
+   BACK BUTTON
+========================================= */
+
 .employee-back-btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 8px;
     background: #17212d;
     border: 1px solid #293444;
     color: #a6b4c6;
-    padding: 10px 14px;
+    padding: 11px 16px;
     border-radius: 8px;
     cursor: pointer;
     margin-bottom: 25px;
+    font-family: inherit;
+    font-size: 13px;
+    transition: all 0.2s ease;
 }
 
 .employee-back-btn:hover {
     color: #45e1cf;
     border-color: #45e1cf;
+    background: #192632;
 }
+
+/* =========================================
+   PROFILE HEADER
+========================================= */
 
 .employee-profile-header {
     display: flex;
     align-items: center;
-    gap: 20px;
-    padding: 25px;
+    justify-content: space-between;
+    gap: 25px;
+    padding: 30px;
     background: #121b27;
     border: 1px solid #253141;
     border-radius: 13px;
     margin-bottom: 20px;
+    box-sizing: border-box;
+}
+
+.employee-profile-main {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    min-width: 0;
+    flex: 1;
+}
+
+/* =========================================
+   PROFILE PHOTO
+========================================= */
+
+.employee-photo-wrapper {
+    position: relative;
+    width: 95px;
+    height: 95px;
+    flex-shrink: 0;
 }
 
 .employee-profile-avatar {
-    width: 75px;
-    height: 75px;
-    display: grid;
-    place-items: center;
+    width: 95px;
+    height: 95px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
     background: #23374c;
     color: #45e1cf;
-    border-radius: 15px;
-    font-size: 25px;
+    border: 2px solid #45e1cf;
+    border-radius: 50%;
+    font-size: 30px;
     font-weight: 700;
+    box-sizing: border-box;
+}
+
+.employee-profile-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    cursor: zoom-in;
+}
+
+.employee-photo-upload-btn {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #121b27;
+    background: #45e1cf;
+    color: #121b27;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.employee-photo-upload-btn:hover {
+    background: #ffffff;
+    transform: scale(1.08);
+}
+
+.employee-photo-upload-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.employee-photo-message {
+    color: #45e1cf;
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+/* =========================================
+   PROFILE INFO
+========================================= */
+
+.employee-profile-info {
+    flex: 1;
+    min-width: 0;
 }
 
 .employee-profile-info h1 {
-    font: 600 26px 'Space Grotesk';
-    margin: 0 0 7px;
+    font: 600 28px 'Space Grotesk', sans-serif;
+    margin: 0 0 8px;
+    color: #e8edf5;
+    word-break: break-word;
 }
 
 .employee-profile-info p {
     color: #8291a5;
     font-size: 13px;
-    margin: 0 0 12px;
+    margin: 0 0 14px;
 }
+
+/* =========================================
+   EMPLOYEE STATUS
+========================================= */
 
 .employee-profile-status {
     display: inline-flex;
-    padding: 6px 12px;
+    align-items: center;
+    justify-content: center;
+    padding: 7px 12px;
     border-radius: 20px;
     font-size: 11px;
+    font-weight: 500;
     background: #18352e;
     color: #69dca9;
 }
@@ -74,18 +177,156 @@
     color: #f3b66d;
 }
 
+/* =========================================
+   PROFILE ACTIONS
+========================================= */
+
+.employee-profile-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+/* EDIT BUTTON */
+
+.employee-profile-edit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    flex-shrink: 0;
+    padding: 12px 18px;
+    background: #45e1cf;
+    color: #09201f;
+    border: 1px solid #45e1cf;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.employee-profile-edit-btn:hover {
+    background: #35cbbb;
+    border-color: #35cbbb;
+    box-shadow: 0 4px 18px #45e1cf25;
+    transform: translateY(-2px);
+}
+
+.employee-profile-edit-btn:active {
+    transform: translateY(0);
+}
+
+.employee-profile-edit-btn svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+
+/* DELETE EMPLOYEE BUTTON */
+
+.employee-profile-delete-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 18px;
+    background: #3a2025;
+    color: #ff9da8;
+    border: 1px solid #66313a;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.employee-profile-delete-btn:hover:not(:disabled) {
+    background: #57262e;
+    border-color: #ff7185;
+    box-shadow: 0 4px 15px #ff718520;
+    transform: translateY(-1px);
+}
+
+.employee-profile-delete-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.employee-profile-delete-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* REMOVE PHOTO BUTTON */
+
+.employee-photo-remove-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: #3a2025;
+    color: #ff9da8;
+    border: 1px solid #66313a;
+    border-radius: 9px;
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: 0.2s;
+}
+
+.employee-photo-remove-btn:hover:not(:disabled) {
+    background: #57262e;
+    border-color: #ff7185;
+}
+
+.employee-photo-remove-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.employee-photo-remove-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* =========================================
+   PROFILE INFORMATION GRID
+========================================= */
+
 .employee-profile-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
 }
 
+/* PROFILE CARD */
+
 .employee-profile-card {
     background: #121b27;
     border: 1px solid #253141;
     border-radius: 13px;
-    padding: 22px;
+    padding: 25px;
+    min-width: 0;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
 }
+
+.employee-profile-card:hover {
+    border-color: #34465a;
+}
+
+/* =========================================
+   CARD HEADING
+========================================= */
 
 .profile-card-heading {
     display: flex;
@@ -95,17 +336,26 @@
     margin-bottom: 22px;
 }
 
+.profile-card-heading svg {
+    flex-shrink: 0;
+}
+
 .profile-card-heading h3 {
     color: #e8edf5;
     font-size: 15px;
+    font-weight: 600;
     margin: 0;
 }
+
+/* =========================================
+   PROFILE DETAILS
+========================================= */
 
 .profile-detail {
     display: flex;
     flex-direction: column;
-    gap: 7px;
-    padding: 15px 0;
+    gap: 8px;
+    padding: 17px 0;
     border-bottom: 1px solid #202b39;
 }
 
@@ -123,19 +373,385 @@
     font-size: 13px;
     font-weight: 500;
     word-break: break-word;
+    overflow-wrap: anywhere;
 }
 
-@media (max-width: 700px) {
+/* =========================================
+   EMPLOYEE ID COPY
+========================================= */
+
+.employee-id-copy {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.employee-id-copy button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background: #253141;
+    color: #45e1cf;
+    border: 1px solid #354456;
+    border-radius: 6px;
+    padding: 6px 10px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: 0.2s;
+}
+
+.employee-id-copy button:hover {
+    background: #45e1cf;
+    color: #121b27;
+}
+
+.employee-id-copy button svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* =========================================
+   EMAIL LINK
+========================================= */
+
+.employee-email-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    color: #45e1cf;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 13px;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+.employee-email-link:hover {
+    text-decoration: underline;
+}
+
+.employee-email-link svg {
+    flex-shrink: 0;
+}
+
+/* =========================================
+   FULL SCREEN PROFILE PHOTO PREVIEW
+========================================= */
+
+.employee-photo-preview-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(5, 10, 18, 0.94);
+    backdrop-filter: blur(8px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    box-sizing: border-box;
+    animation: photoPreviewFade 0.2s ease;
+}
+
+.employee-photo-preview-image {
+    max-width: 85vw;
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 16px;
+    border: 2px solid #45e1cf;
+    box-shadow: 0 0 40px #45e1cf25;
+    animation: photoPreviewZoom 0.25s ease;
+}
+
+.employee-photo-preview-close {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #354456;
+    background: #17212d;
+    color: #ffffff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.employee-photo-preview-close:hover {
+    background: #45e1cf;
+    color: #101923;
+    transform: rotate(90deg);
+}
+
+.employee-photo-preview-name {
+    margin-top: 20px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+@keyframes photoPreviewFade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes photoPreviewZoom {
+    from {
+        transform: scale(0.85);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+/* =========================================
+   EMPLOYEE ACTIVITY TIMELINE
+========================================= */
+
+.employee-activity-card {
+    margin-top: 25px;
+    padding: 28px 32px;
+    background: #121b27;
+    border: 1px solid #253141;
+    border-radius: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.employee-activity-card:hover {
+    border-color: #34465a;
+}
+
+.employee-activity-card .profile-card-heading {
+    margin-bottom: 25px;
+}
+
+.employee-activity-timeline {
+    position: relative;
+    margin-top: 10px;
+}
+
+/* TIMELINE ITEM */
+
+.activity-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    position: relative;
+    padding-bottom: 30px;
+}
+
+.activity-item:last-child {
+    padding-bottom: 0;
+}
+
+/* CONNECTING LINE */
+
+.activity-item:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    left: 19px;
+    top: 40px;
+    bottom: 0;
+    width: 2px;
+    background: #253141;
+}
+
+/* TIMELINE ICON */
+
+.activity-icon {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+    border: 1px solid transparent;
+}
+
+.activity-created {
+    background: #173c37;
+    color: #45e1cf;
+    border-color: #24594f;
+}
+
+.activity-updated {
+    background: #263650;
+    color: #8ab4ff;
+    border-color: #354b6c;
+}
+
+.activity-photo {
+    background: #35294b;
+    color: #c5a5ff;
+    border-color: #51406d;
+}
+
+/* TIMELINE CONTENT */
+
+.activity-content {
+    padding-top: 3px;
+    min-width: 0;
+}
+
+.activity-content strong {
+    display: block;
+    color: #e8edf5;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.activity-content p {
+    margin: 7px 0 0;
+    color: #8fa4bd;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* DEMO NOTE */
+
+.activity-demo-note {
+    margin-top: 25px;
+    padding-top: 16px;
+    border-top: 1px solid #253141;
+    color: #71859d;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+/* TABLET */
+
+@media (max-width: 1000px) {
     .employee-profile-grid {
         grid-template-columns: 1fr;
     }
 
     .employee-profile-header {
+        flex-wrap: wrap;
+    }
+
+    .employee-profile-actions {
+        flex-wrap: wrap;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+    .employee-profile-header {
         flex-direction: column;
         align-items: flex-start;
+        padding: 22px;
+        gap: 20px;
+    }
+
+    .employee-profile-main {
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+    }
+
+    .employee-photo-wrapper {
+        width: 75px;
+        height: 75px;
+    }
+
+    .employee-profile-avatar {
+        width: 75px;
+        height: 75px;
+        font-size: 23px;
     }
 
     .employee-profile-info h1 {
         font-size: 22px;
+    }
+
+    .employee-profile-actions {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .employee-profile-actions button {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .employee-profile-card {
+        padding: 20px;
+    }
+
+    .employee-profile-grid {
+        gap: 15px;
+    }
+
+    .employee-activity-card {
+        padding: 20px;
+    }
+
+    .employee-photo-preview-image {
+        max-width: 95vw;
+        max-height: 70vh;
+    }
+
+    .employee-photo-preview-close {
+        top: 15px;
+        right: 15px;
+    }
+}
+
+/* SMALL MOBILE */
+
+@media (max-width: 400px) {
+    .employee-profile-header {
+        padding: 18px;
+    }
+
+    .employee-profile-main {
+        gap: 12px;
+    }
+
+    .employee-profile-info h1 {
+        font-size: 20px;
+    }
+
+    .profile-card-heading h3 {
+        font-size: 14px;
+    }
+
+    .employee-profile-card {
+        padding: 17px;
+    }
+
+    .employee-activity-card {
+        padding: 17px;
+    }
+
+    .activity-content strong {
+        font-size: 13px;
+    }
+
+    .activity-content p {
+        font-size: 12px;
     }
 }

@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
     Search,
     UserPlus,
@@ -13,8 +12,6 @@ import {
 } from "lucide-react";
 
 import "./Employees.css";
-
-console.log("Employees CSS loaded");
 
 const API_URL = "http://localhost:8080/api/employees";
 const DEPARTMENT_API = "http://localhost:8080/api/departments";
@@ -47,6 +44,7 @@ const mapEmployee = (employee) => ({
 
 const Employees = () => {
     const navigate = useNavigate();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     const [employees, setEmployees] = useState([]);
     const [departments, setDepartments] = useState([]);
@@ -178,6 +176,24 @@ const Employees = () => {
         setError("");
         setShowModal(true);
     };
+
+    // Automatically open Edit Modal from Employee Profile
+    useEffect(() => {
+        const editId = searchParams.get("edit");
+
+        if (!editId || employees.length === 0) return;
+
+        const employee = employees.find(
+            (item) => String(item.id) === String(editId)
+        );
+
+        if (employee) {
+            openEditModal(employee);
+
+            // Remove edit query from URL
+            setSearchParams({}, { replace: true });
+        }
+    }, [employees, searchParams, setSearchParams]);
 
     // Close Modal
     const closeModal = () => {
@@ -489,10 +505,10 @@ const Employees = () => {
                                         <td>
                                             <span
                                                 className={`directory-status ${employee.status === "Active"
-                                                    ? "active"
-                                                    : employee.status === "On Leave"
-                                                        ? "leave"
-                                                        : "inactive"
+                                                        ? "active"
+                                                        : employee.status === "On Leave"
+                                                            ? "leave"
+                                                            : "inactive"
                                                     }`}
                                             >
                                                 <span></span>

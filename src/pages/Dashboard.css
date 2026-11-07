@@ -313,3 +313,136 @@
         flex-direction: column;
     }
 }
+
+/* ===== Recent Activity ===== */
+
+.recent-activity-panel {
+    margin-top: 22px;
+}
+
+.recent-activity-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.recent-activity-list .activity-item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 0;
+    border-top: 1px solid #253141;
+}
+
+.recent-activity-list .activity-avatar {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+}
+
+.activity-details {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+    flex: 1;
+}
+
+.activity-details strong {
+    color: #e8edf5;
+    font-size: 13px;
+}
+
+.activity-details p {
+    color: #45e1cf;
+    font-size: 12px;
+    margin: 0;
+}
+
+.activity-details span {
+    color: #8192a8;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.activity-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 7px;
+    flex-shrink: 0;
+    margin-left: auto;
+}
+
+.activity-meta span {
+    color: #a7b7ca;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.activity-meta small {
+    color: #718197;
+    font-size: 11px;
+}
+
+.activity-empty {
+    color: #8192a8;
+    font-size: 13px;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.recent-activity-list .activity-item:hover {
+    background: rgba(69, 225, 207, 0.025);
+}
+
+/* Responsive Activity Layout */
+
+@media (max-width: 650px) {
+    .recent-activity-list .activity-item {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .activity-details {
+        flex: 1;
+    }
+
+    .activity-meta {
+        width: 100%;
+        margin-left: 60px;
+        align-items: flex-start;
+    }
+
+    .activity-meta span {
+        white-space: normal;
+    }
+}
+
+/* ===== Analytics Charts ===== */
+
+.analytics-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 20px;
+    margin-bottom: 22px;
+}
+
+.chart-panel {
+    min-width: 0;
+}
+
+.chart-container {
+    position: relative;
+    width: 100%;
+    height: 280px;
+}
+
+.doughnut-container {
+    height: 260px;
+}
+
+@media (max-width: 900px) {
+    .analytics-grid {
+        grid-template-columns: 1fr;
+    }
+}
